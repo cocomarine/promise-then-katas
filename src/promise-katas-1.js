@@ -84,11 +84,8 @@ const internalServerError = () => new Promise((resolve, reject) => { reject ({ e
 // happySad(0) rejects to "sad"
 
 const happySad = (n) => new Promise((resolve, reject) => { 
-    if(n >= 1) {
-        resolve("happy")
-    } else {
-        reject("sad")
-    }
+    if(n >= 1) resolve("happy");
+    reject("sad");
 });
 
 // 10 Create a function that returns a promise which resolves to "Yes. Luke, I am your father." if the 
@@ -98,18 +95,17 @@ const happySad = (n) => new Promise((resolve, reject) => {
 // amIYourFather() rejects to "Not your dad."
 
 const amIYourFather = (name) => new Promise((resolve, reject) => { 
-    if(name === "Luke") {
-        resolve("Yes. Luke, I am your father.")
-    } else {
-        reject("Not your dad.")
-    }
+    if(name === "Luke") resolve("Yes. Luke, I am your father.");
+    reject("Not your dad.");
 });
 
 // 11 Create a function that returns a promise. The promise should resolve to a new function that returns "My name is <input name>" 
 // Example:
 // A call to myNameIs() resolves to a new function that takes one argument, name, and returns "My name is name" Eg (name) => `My name is ${name}`
 
-const myNameIs = () => new Promise((resolve) => { resolve( (name) => `My name is ${name}`) })
+const myNameIs = () => new Promise((resolve) => { 
+    resolve( (name) => `My name is ${name}`); 
+});
 
 
 module.exports = {
